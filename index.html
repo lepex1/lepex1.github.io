@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-F3X89ML0G2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-F3X89ML0G2');
+    </script> <!-- Google tag end (gtag.js) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="description" content="Welcome to my website. Here you will find brief information about me">
+    <meta property="og:image" content="images/OEh1e7t.gif">
+    <meta name="theme-color" content="#2c94a4">
+    <meta name="keywords" content="lepex">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>lepex</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <script src="js/scripts.min.js" async=""></script>
+    <script>
+        function updateTimeAndDate() {
+            // Получаем текущее время в UTC
+            const now = new Date();
+
+            // Добавляем 2 часа к UTC для получения времени в GMT+2
+            const offset = 2 * 60 * 60 * 1000;
+            const gmt2 = new Date(now.getTime() + offset);
+
+            // Форматируем часы и минуты
+            const hours = gmt2.getUTCHours().toString().padStart(2, '0');
+            const minutes = gmt2.getUTCMinutes().toString().padStart(2, '0');
+            const timeString = `${hours}:${minutes}`;
+
+            // Форматируем дату
+            const day = gmt2.getUTCDate().toString().padStart(2, '0');
+            const month = (gmt2.getUTCMonth() + 1).toString().padStart(2, '0'); // Месяцы идут с 0, поэтому добавляем 1
+            const year = gmt2.getUTCFullYear();
+            const dateString = `${day}/${month}/${year}`;
+
+            // Обновляем элементы на странице
+            document.querySelector('.time').textContent = timeString;
+            document.querySelector('.date').textContent = dateString;
+        }
+
+        // Обновляем время и дату каждую минуту
+        setInterval(updateTimeAndDate, 60000);
+        // Обновляем сразу при загрузке страницы
+        document.addEventListener('DOMContentLoaded', updateTimeAndDate);
+    </script>
+</head>
+<body>
+    <main>
+        <div class="logo-overlay"></div><img class="tcf-logo" src="images/lol.gif" alt="Logo"><span class="page-state pulse">Loading...</span>
+        <div class="room"><img class="room-gif" src="images/room.gif" alt="Room"><svg class="monitor-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 600 400" style="enable-background:new 0 0 600 400;" space="preserve"><g class="monitor"><rect class="st1" x="79.5" y="157.5" width="81" height="49"></rect></g></svg>
+            <div class="interactive-wrap">
+                <div class="monitor"></div>
+            </div>
+        </div>
+        <div class="screenGrid"></div>
+        <div class="screenGrid"></div>
+        <div class="screenGrid"></div>
+        <div class="screen desktop">
+            <div class="noise"></div>
+            <div class="monitor-edges"></div>
+            <div class="apps">
+                <div class="app-icon work"><i class="fa fa-folder fa-2x"></i><span>Future...</span></div>
+                <div class="clearfix"></div>
+                <div class="app-icon about"><i class="fa fa-user-circle fa-2x"></i><span>About me</span></div>
+                <div class="clearfix"></div>
+                <div class="app-icon steam"><a href="https://steamcommunity.com/id/lepex2" target="_blank" rel="noopener"><i class="fa fa-steam fa-2x"></i><span>Steam</span></a></div>
+                <div class="clearfix"></div>
+                <div class="clearfix"></div>
+                <div class="app-icon sitev2"><a href="https://konect.gg/lepex" target="_blank" rel="noopener"><i class="fa fa-desktop fa-2x"></i><span>My PC</span></a></div>
+                <div class="clearfix"></div>
+                <div class="clearfix">
+                <span></span></div>
+            </div>
+            <div class="apps social">
+                <div class="app-icon social"><a href="https://github.com/lepex1" target="_blank" rel="noopener"><i class="fa fa-github fa-2x"></i><span>Github</span></a></div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="explorer-window trash-explorer" tabindex="0">
+                <div class="window-header">
+                    <p class="window-title">Recycle</p>
+                    <div class="button-wrap close-explorer"><i class="fa fa-times"></i></div>
+                </div>
+                <div class="window-body trash-body">
+                    <div class="clearfix"></div>
+                    <div class="explorer-icon ie"><i class="fa fa-internet-explorer fa-2x"></i></div>
+                </div>
+            </div>
+            <div class="explorer-window about-explorer" tabindex="0">
+                <div class="window-header">
+                    <p class="window-title">About me</p>
+                    <div class="button-wrap close-explorer"><i class="fa fa-times"></i></div>
+                </div>
+                <div class="window-body about-body">
+                    <div class="clearfix"></div>
+                    <p>Hey, it's me <a href="https://github.com/lepex1" target="_blank" rel="noopener">lepex</a>👋🏼</p>
+                    <p>Future information security professional. I like to personalize things, spend time with friends and work on new ideas</p>
+                    <p></p>
+                    <p></p>
+                </div>
+            </div>
+            <div class="explorer-window work-explorer" tabindex="0">
+                <div class="window-header">
+                    <p class="window-title">Homies</p>
+                    <div class="button-wrap close-explorer"><i class="fa fa-times"></i></div>
+              </div>
+                <div class="window-body work-body">
+                    <div class="work-item">
+                        <a class="work-link-1" href="" target="_blank"> <img src="images/ll.png"><span class="name">??</span><span class="language one no-left-margin">???</span></a>
+                    </div>
+                    <div class="work-item">
+                        <a href="" target="_blank"><img src="images/ll.png"><span class="name">???</span><span class="language one no-left-margin">???</span></a>
+                    </div> 
+                </div>
+            </div>
+            <div class="explorer-window contact-explorer" tabindex="0">
+                <div class="window-header">
+                    <p class="window-title">Contact</p>
+                    <div class="button-wrap close-explorer"><i class="fa fa-times"></i></div>
+                </div>
+                <div class="window-body contact-body">
+                    <form>
+                        <div class="to-from-field"><span>To</span><input type="text" value="contact@4ng3l.dev" readonly=""></div>
+                        <div class="to-from-field"><span>From</span><input type="text" id="email" name="email" placeholder="Enter your email here"></div><textarea rows="5" id="message" name="message" placeholder="Enter your message here"></textarea><input class="honeypot" name="firstname" type="text" id="firstname">
+                        <div class="contact-submit">Send <i class="fa fa-send"></i></div>
+                    </form>
+                    <div class="thanks">
+                        <h1>Successfully!</h1>
+                        <p>I'll get back to you soon!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="explorer-window awards-explorer" tabindex="0">
+                <div class="window-header">
+                    <p class="window-title">Awards</p>
+                    <div class="button-wrap close-explorer"><i class="fa fa-times"></i></div>
+                </div>
+                <div class="window-body awards-body">
+                    <div class="award-item"><img src="images/cssda-special-kudos-white.png"><span class="name">CSS Design Awards - Special thanks</span></div>
+                    <div class="award-item"><img src="images/best-ui-white.png"><span class="name">CSS Design Awards - Best UI Design</span></div>
+                    <div class="award-item"><img src="images/best-innovation-white.png"><span class="name">CSS Design Awards - Best Innovation</span></div>
+                </div>
+            </div>
+            <div class="info">
+                <div>
+                    <p class="time">timeString</p>
+                    <p class="date">dateString</p>
+                </div><i class="fa fa-power-off fa-2x shutdown info-icon"></i></div>
+        </div>
+    </main>
+
+
+
+<script data-cfasync="false" src="js/email-decode.min.js"></script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'8b8d5f9ace4466c0',t:'MTcyNDYwNzY5Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" data-cf-beacon="{" rayid":"8b8d5f9ace4466c0","version":"2024.8.0","r":1,"token":"2268315b0dfc4e4da5cef56da92e15c0","servertiming":{"name":{"cfl4":true}}}"="" crossorigin="anonymous"></script>
+</body></html>
