@@ -23,32 +23,30 @@
     <script src="js/scripts.min.js" async=""></script>
     <script>
         function updateTimeAndDate() {
-            // Получаем текущее время в UTC
             const now = new Date();
 
-            // Добавляем 2 часа к UTC для получения времени в GMT+2
+            // GMT+2
             const offset = 2 * 60 * 60 * 1000;
             const gmt2 = new Date(now.getTime() + offset);
 
-            // Форматируем часы и минуты
+            // Time
             const hours = gmt2.getUTCHours().toString().padStart(2, '0');
             const minutes = gmt2.getUTCMinutes().toString().padStart(2, '0');
             const timeString = `${hours}:${minutes}`;
 
-            // Форматируем дату
+            // Date
             const day = gmt2.getUTCDate().toString().padStart(2, '0');
             const month = (gmt2.getUTCMonth() + 1).toString().padStart(2, '0'); // Месяцы идут с 0, поэтому добавляем 1
             const year = gmt2.getUTCFullYear();
             const dateString = `${day}/${month}/${year}`;
 
-            // Обновляем элементы на странице
             document.querySelector('.time').textContent = timeString;
             document.querySelector('.date').textContent = dateString;
         }
 
-        // Обновляем время и дату каждую минуту
+        // Update time every 1 min
         setInterval(updateTimeAndDate, 60000);
-        // Обновляем сразу при загрузке страницы
+        // Update after reloading page
         document.addEventListener('DOMContentLoaded', updateTimeAndDate);
     </script>
 </head>
@@ -108,7 +106,7 @@
             </div>
             <div class="explorer-window work-explorer" tabindex="0">
                 <div class="window-header">
-                    <p class="window-title">Homies</p>
+                    <p class="window-title">Future...</p>
                     <div class="button-wrap close-explorer"><i class="fa fa-times"></i></div>
               </div>
                 <div class="window-body work-body">
