@@ -1,117 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BBBMXRX9F9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-BBBMXRX9F9');
-</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BBBMXRX9F9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BBBMXRX9F9');
+    </script>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Welcome to my website. Here you will find brief information about me">
     <meta property="og:image" content="images/OEh1e7t.gif">
     <meta name="theme-color" content="#2c94a4">
     <meta name="keywords" content="lepex">
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>lepex</title>
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="css/styles.min.css">
-    <script src="js/scripts.min.js" async=""></script>
+    <script src="js/scripts.min.js" async></script>
     <script>
-        function updateTimeAndDate() {
-            const now = new Date();
+        document.addEventListener('DOMContentLoaded', function() {
+            function updateTimeAndDate() {
+                const now = new Date();
+                const offset = 2 * 60 * 60 * 1000;
+                const gmt2 = new Date(now.getTime() + offset);
 
-            // GMT+2
-            const offset = 2 * 60 * 60 * 1000;
-            const gmt2 = new Date(now.getTime() + offset);
+                const hours = gmt2.getUTCHours().toString().padStart(2, '0');
+                const minutes = gmt2.getUTCMinutes().toString().padStart(2, '0');
+                const timeString = `${hours}:${minutes}`;
 
-            // Time
-            const hours = gmt2.getUTCHours().toString().padStart(2, '0');
-            const minutes = gmt2.getUTCMinutes().toString().padStart(2, '0');
-            const timeString = `${hours}:${minutes}`;
+                const day = gmt2.getUTCDate().toString().padStart(2, '0');
+                const month = (gmt2.getUTCMonth() + 1).toString().padStart(2, '0');
+                const year = gmt2.getUTCFullYear();
+                const dateString = `${day}/${month}/${year}`;
 
-            // Date
-            const day = gmt2.getUTCDate().toString().padStart(2, '0');
-            const month = (gmt2.getUTCMonth() + 1).toString().padStart(2, '0'); // Месяцы идут с 0, поэтому добавляем 1
-            const year = gmt2.getUTCFullYear();
-            const dateString = `${day}/${month}/${year}`;
+                document.querySelector('.time').textContent = timeString;
+                document.querySelector('.date').textContent = dateString;
+            }
 
-            document.querySelector('.time').textContent = timeString;
-            document.querySelector('.date').textContent = dateString;
-        }
-
-        // Update time every 1 min
-        setInterval(updateTimeAndDate, 60000);
-        // Update after reloading page
-        document.addEventListener('DOMContentLoaded', updateTimeAndDate);
+            updateTimeAndDate();
+            setInterval(updateTimeAndDate, 60000);
+        });
     </script>
 </head>
 <body>
     <main>
-        <div class="logo-overlay"></div><img class="tcf-logo" src="images/lol.gif" alt="Logo"><span class="page-state pulse">Loading...</span>
-        <div class="room"><img class="room-gif" src="images/room.gif" alt="Room"><svg class="monitor-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 600 400" style="enable-background:new 0 0 600 400;" space="preserve"><g class="monitor"><rect class="st1" x="79.5" y="157.5" width="81" height="49"></rect></g></svg>
+        <div class="logo-overlay"></div>
+        <img class="tcf-logo" src="images/lol.gif" alt="Logo">
+        <span class="page-state pulse">Loading...</span>
+        <div class="room">
+            <img class="room-gif" src="images/room.gif" alt="Room">
+            <svg class="monitor-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+                <g class="monitor">
+                    <rect class="st1" x="79.5" y="157.5" width="81" height="49"></rect>
+                </g>
+            </svg>
             <div class="interactive-wrap">
                 <div class="monitor"></div>
             </div>
         </div>
-        <div class="screenGrid"></div>
-        <div class="screenGrid"></div>
-        <div class="screenGrid"></div>
         <div class="screen desktop">
             <div class="noise"></div>
             <div class="monitor-edges"></div>
             <div class="apps">
-                <div class="app-icon work"><i class="fa fa-folder fa-2x"></i><span>My PC</span></div>
-                <div class="clearfix"></div>
-                <div class="app-icon about"><i class="fa fa-user-circle fa-2x"></i><span>About me</span></div>
-                <div class="clearfix"></div>
-                <div class="app-icon steam"><a href="https://steamcommunity.com/id/lepex2" target="_blank" rel="noopener"><i class="fa fa-steam fa-2x"></i><span>Steam</span></a></div>
-                <div class="clearfix"></div>
-                <div class="clearfix"></div>
-                <div class="app-icon sitev2"><a href="https://lepex.ru/telegram" target="_blank" rel="noopener"><i class="fa fa-telegram fa-2x"></i><span>Contact me</span></a></div>
-                <div class="clearfix"></div>
-                <div class="clearfix">
-                <span></span></div>
-            </div>
-            <div class="apps social">
-                <div class="app-icon social"><a href="https://github.com/lepex1" target="_blank" rel="noopener"><i class="fa fa-github fa-2x"></i><span>Github</span></a></div>
-                <div class="clearfix"></div>
+                <div class="app-icon work">
+                    <i class="fa fa-folder fa-2x"></i>
+                    <span>My PC</span>
+                </div>
+                <div class="app-icon about">
+                    <i class="fa fa-user-circle fa-2x"></i>
+                    <span>About me</span>
+                </div>
+                <div class="app-icon steam">
+                    <a href="https://steamcommunity.com/id/lepex2" target="_blank" rel="noopener">
+                        <i class="fa fa-steam fa-2x"></i>
+                        <span>Steam</span>
+                    </a>
+                </div>
+                <div class="app-icon sitev2">
+                    <a href="https://lepex.ru/telegram" target="_blank" rel="noopener">
+                        <i class="fa fa-telegram fa-2x"></i>
+                        <span>Contact me</span>
+                    </a>
+                </div>
+                <div class="app-icon social">
+                    <a href="https://github.com/lepex1" target="_blank" rel="noopener">
+                        <i class="fa fa-github fa-2x"></i>
+                        <span>Github</span>
+                    </a>
+                </div>
             </div>
             <div class="explorer-window trash-explorer" tabindex="0">
                 <div class="window-header">
                     <p class="window-title">Recycle</p>
-                    <div class="button-wrap close-explorer"><i class="fa fa-times"></i></div>
+                    <div class="button-wrap close-explorer">
+                        <i class="fa fa-times"></i>
+                    </div>
                 </div>
                 <div class="window-body trash-body">
-                    <div class="clearfix"></div>
-                    <div class="explorer-icon ie"><i class="fa fa-internet-explorer fa-2x"></i></div>
+                    <div class="explorer-icon ie">
+                        <i class="fa fa-internet-explorer fa-2x"></i>
+                    </div>
                 </div>
             </div>
             <div class="explorer-window about-explorer" tabindex="0">
                 <div class="window-header">
                     <p class="window-title">About me</p>
-                    <div class="button-wrap close-explorer"><i class="fa fa-times"></i></div>
+                    <div class="button-wrap close-explorer">
+                        <i class="fa fa-times"></i>
+                    </div>
                 </div>
                 <div class="window-body about-body">
-                    <div class="clearfix"></div>
                     <p>Hey, it's me <a href="https://github.com/lepex1" target="_blank" rel="noopener">lepex</a>👋🏼</p>
                     <p>Future information security professional. I like to personalize things, spend time with friends and work on new ideas</p>
-                    <p></p>
-                    <p></p>
                 </div>
             </div>
             <div class="explorer-window work-explorer" tabindex="0">
                 <div class="window-header">
                     <p class="window-title">My PC</p>
-                    <div class="button-wrap close-explorer"><i class="fa fa-times"></i></div>
-              </div>
+                    <div class="button-wrap close-explorer">
+                        <i class="fa fa-times"></i>
+                    </div>
+                </div>
                 <div class="window-body work-body">
                     <div class="work-item">
-                        <a class="work-link-1" target="_blank"> <img src="images/1.png"><span class="name">Logitech G435</span><span class="language one no-left-margin">Headset</span></a>
+                        <a target="_blank"><img src="images/1.png"><span class="name">Logitech G435</span><span class="language one no-left-margin">Headset</span></a>
                     </div>
                     <div class="work-item">
                         <a target="_blank"><img src="images/2.png"><span class="name">Dark Project KD83A black</span><span class="language one no-left-margin">Keyboard</span></a>
@@ -139,12 +153,16 @@
             <div class="explorer-window contact-explorer" tabindex="0">
                 <div class="window-header">
                     <p class="window-title">Contact</p>
-                    <div class="button-wrap close-explorer"><i class="fa fa-times"></i></div>
+                    <div class="button-wrap close-explorer">
+                        <i class="fa fa-times"></i>
+                    </div>
                 </div>
                 <div class="window-body contact-body">
                     <form>
-                        <div class="to-from-field"><span>To</span><input type="text" value="contact@4ng3l.dev" readonly=""></div>
-                        <div class="to-from-field"><span>From</span><input type="text" id="email" name="email" placeholder="Enter your email here"></div><textarea rows="5" id="message" name="message" placeholder="Enter your message here"></textarea><input class="honeypot" name="firstname" type="text" id="firstname">
+                        <div class="to-from-field"><span>To</span><input type="text" value="contact@4ng3l.dev" readonly></div>
+                        <div class="to-from-field"><span>From</span><input type="text" id="email" name="email" placeholder="Enter your email here"></div>
+                        <textarea rows="5" id="message" name="message" placeholder="Enter your message here"></textarea>
+                        <input class="honeypot" name="firstname" type="text" id="firstname">
                         <div class="contact-submit">Send <i class="fa fa-send"></i></div>
                     </form>
                     <div class="thanks">
@@ -156,7 +174,9 @@
             <div class="explorer-window awards-explorer" tabindex="0">
                 <div class="window-header">
                     <p class="window-title">Awards</p>
-                    <div class="button-wrap close-explorer"><i class="fa fa-times"></i></div>
+                    <div class="button-wrap close-explorer">
+                        <i class="fa fa-times"></i>
+                    </div>
                 </div>
                 <div class="window-body awards-body">
                     <div class="award-item"><img src="images/cssda-special-kudos-white.png"><span class="name">CSS Design Awards - Special thanks</span></div>
@@ -166,10 +186,12 @@
             </div>
             <div class="info">
                 <div>
-                    <p class="time">timeString</p>
-                    <p class="date">dateString</p>
-                </div><i class="fa fa-power-off fa-2x shutdown info-icon"></i></div>
+                    <p class="time"></p>
+                    <p class="date"></p>
+                </div>
+                <i class="fa fa-power-off fa-2x shutdown info-icon"></i>
+            </div>
         </div>
     </main>
-
-</body></html>
+</body>
+</html>
