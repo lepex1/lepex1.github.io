@@ -1,310 +1,636 @@
 <!DOCTYPE html>
+
 <html lang="ru" data-lt-installed="true">
+
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>lepex</title>
+
     <style>
+
         :root {
+
             --light-bg: #fff;
+
             --light-text: #000;
+
             --dark-bg: #2e2e2e;
+
             --dark-text: #f4f4f4;
+
             --light-header: #007bff;
+
             --dark-header: #0056b3;
+
             --light-footer: #f4f4f4;
+
             --dark-footer: #3a3a3a;
+
         }
+
+
 
         body {
+
             font-family: Arial, sans-serif;
+
             margin: 0;
+
             padding: 0;
+
             color: var(--light-text);
+
             background-color: var(--light-bg);
+
             transition: all 0.3s;
+
         }
+
+
 
         .dark-mode {
+
             color: var(--dark-text);
+
             background-color: var(--dark-bg);
+
         }
+
+
 
         header {
+
             background-color: var(--light-header);
+
             color: #fff;
+
             padding: 20px;
+
             text-align: center;
+
             transition: background-color 0.3s;
+
             display: flex;
+
             flex-direction: column;
+
             align-items: center;
+
             gap: 10px;
+
         }
+
+
+        header h1 {
+            font-size: 6rem; /* Увеличенный размер шрифта */
+            font-weight: bold; /* Сделать текст жирным */
+            margin: 0; /* Убирает отступы */
+        }
+
+
 
         .dark-mode header {
+
             background-color: var(--dark-header);
+
         }
+
+
 
         nav {
+
             display: flex;
+
             justify-content: center;
+
             background-color: var(--light-footer);
+
             padding: 10px;
+
             transition: background-color 0.3s;
+
         }
+
+
 
         .dark-mode nav {
+
             background-color: var(--dark-footer);
+
         }
+
+
 
         nav a {
+
             margin: 0 15px;
+
             text-decoration: none;
+
             color: var(--light-text);
+
             font-weight: bold;
+
         }
+
+
 
         .dark-mode nav a {
+
             color: var(--dark-text);
+
         }
+
+
 
         nav a:hover {
+
             color: #007bff;
+
         }
+
+
 
         nav a.active {
+
             text-decoration: underline;
+
         }
+
+
 
         .content {
+
             padding: 20px;
+
             text-align: center;
+
         }
+
+
 
         footer {
+
             text-align: center;
+
             padding: 10px;
+
             background-color: var(--light-footer);
+
             transition: background-color 0.3s;
+
         }
+
+
 
         .dark-mode footer {
+
             background-color: var(--dark-footer);
+
         }
+
+
 
         .theme-toggle, .dropbtn {
+
             background-color: transparent;
+
             color: #fff;
+
             border: 2px solid var(--dark-text);
+
             border-radius: 5px;
+
             padding: 10px 20px;
+
             font-size: 16px;
+
             cursor: pointer;
+
             text-align: center;
+
             transition: color 0.3s, border-color 0.3s, background-color 0.3s;
+
             width: 250px;
+
             white-space: nowrap;
+
         }
+
+
 
         .dark-mode .theme-toggle, .dark-mode .dropbtn {
+
             color: var(--dark-text);
+
             border-color: var(--dark-text);
+
         }
+
+
 
         .theme-toggle:hover, .dropbtn:hover {
+
             background-color: #007bff;
+
             color: #fff;
+
             border-color: #007bff;
+
         }
+
+
 
         .dropdown {
+
             position: relative;
+
             display: inline-block;
+
         }
+
+
 
         .dropdown-content {
+
             display: none;
+
             position: absolute;
+
             background-color: var(--light-footer);
+
             min-width: 100%;
+
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
             z-index: 1;
+
             border-radius: 5px;
+
         }
+
+
 
         .dark-mode .dropdown-content {
+
             background-color: var(--dark-footer);
+
         }
+
+
 
         .dropdown-content a {
+
             color: var(--light-text);
+
             padding: 10px;
+
             text-decoration: none;
+
             display: block;
+
             border-radius: 5px;
+
             border: 2px solid transparent;
+
             transition: border-color 0.3s;
+
         }
+
+
 
         .dark-mode .dropdown-content a {
+
             color: var(--dark-text);
+
         }
+
+
 
         .dropdown-content a:hover {
+
             border-color: var(--dark-text);
+
         }
+
+
 
         .dropdown:hover .dropdown-content {
+
             display: block;
+
         }
 
-        /* Новые стили для изображений */
+
+
         .works img {
+
             width: 200px;
+
             height: 200px;
-            object-fit: cover; /* чтобы изображение сохраняло пропорции */
+
+            object-fit: cover;
+
             margin: 10px;
+
         }
 
-        /* Новый стиль для подписи под изображением */
+
+
         .work-item {
+
             display: inline-block;
+
             margin: 20px;
+
             text-align: center;
+
         }
+
+
 
         .image-caption {
-            margin-top: 0; /* Убираем отступ */
+
+            margin-top: 0;
+
             font-size: 15px;
-            color: var(--light-text); /* цвет текста для светлой темы */
+
+            color: var(--light-text);
+
         }
+
+
 
         .dark-mode .image-caption {
-            color: var(--dark-text); /* цвет текста для темной темы */
+
+            color: var(--dark-text);
+
         }
+
     </style>
+
     <script>
-        function toggleTheme() {
-            const body = document.body;
-            body.classList.toggle('dark-mode');
-            const themeButtons = document.querySelectorAll('[data-toggle-theme]');
-            themeButtons.forEach(btn => {
-                if (body.classList.contains('dark-mode')) {
-                    btn.innerHTML = btn.getAttribute('data-dark');
-                } else {
-                    btn.innerHTML = btn.getAttribute('data-light');
-                }
-            });
-            localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
-        }
 
-        function switchLanguage(lang) {
-            const elements = document.querySelectorAll('[data-lang]');
-            elements.forEach(el => {
-                el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
-            });
+        document.addEventListener('DOMContentLoaded', () => {
 
-            const languageButtons = document.querySelectorAll('[data-language-toggle]');
-            languageButtons.forEach(btn => {
-                btn.innerHTML = lang === 'ru' ? 'Language' : 'Language';
-            });
+            const russianLangs = ['ru', 'kk', 'be', 'uk'];
 
-            const themeButtons = document.querySelectorAll('[data-toggle-theme]');
-            themeButtons.forEach(btn => {
-                if (document.body.classList.contains('dark-mode')) {
-                    btn.innerHTML = lang === 'ru' ? 'Светлая тема <span>☀️</span>' : 'Light mode <span>☀️</span>';
-                } else {
-                    btn.innerHTML = lang === 'ru' ? 'Темная тема <span>🌙</span>' : 'Dark mode <span>🌙</span>';
-                }
-                btn.setAttribute('data-light', lang === 'ru' ? 'Темная тема <span>🌙</span>' : 'Dark mode <span>🌙</span>');
-                btn.setAttribute('data-dark', lang === 'ru' ? 'Светлая тема <span>☀️</span>' : 'Light mode <span>☀️</span>');
-            });
-        }
+            const userLang = navigator.language.split('-')[0];
 
-        window.addEventListener('DOMContentLoaded', () => {
+
+
+            if (russianLangs.includes(userLang)) {
+
+                switchLanguage('ru');
+
+            } else {
+
+                switchLanguage('en');
+
+            }
+
+
+
             const savedTheme = localStorage.getItem('theme');
+
             const body = document.body;
+
             const themeButtons = document.querySelectorAll('[data-toggle-theme]');
-            const userLang = navigator.language.startsWith('en') ? 'en' : 'ru';
-            switchLanguage(userLang);
+
+
 
             if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+
                 body.classList.add('dark-mode');
+
                 themeButtons.forEach(btn => btn.innerHTML = btn.getAttribute('data-dark'));
+
             } else {
+
                 themeButtons.forEach(btn => btn.innerHTML = btn.getAttribute('data-light'));
+
             }
+
         });
+
+
+
+        function toggleTheme() {
+
+            const body = document.body;
+
+            body.classList.toggle('dark-mode');
+
+            const themeButtons = document.querySelectorAll('[data-toggle-theme]');
+
+            themeButtons.forEach(btn => {
+
+                if (body.classList.contains('dark-mode')) {
+
+                    btn.innerHTML = btn.getAttribute('data-dark');
+
+                } else {
+
+                    btn.innerHTML = btn.getAttribute('data-light');
+
+                }
+
+            });
+
+            localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+
+        }
+
+
+
+        function switchLanguage(lang) {
+
+            const elements = document.querySelectorAll('[data-lang]');
+
+            elements.forEach(el => {
+
+                el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+
+            });
+
+
+
+            const languageButtons = document.querySelectorAll('[data-language-toggle]');
+
+            languageButtons.forEach(btn => {
+
+                btn.innerHTML = lang === 'ru' ? 'Language' : 'Language';
+
+            });
+
+
+
+            const themeButtons = document.querySelectorAll('[data-toggle-theme]');
+
+            themeButtons.forEach(btn => {
+
+                if (document.body.classList.contains('dark-mode')) {
+
+                    btn.innerHTML = lang === 'ru' ? 'Светлая тема <span>☀️</span>' : 'Light mode <span>☀️</span>';
+
+                } else {
+
+                    btn.innerHTML = lang === 'ru' ? 'Темная тема <span>🌙</span>' : 'Dark mode <span>🌙</span>';
+
+                }
+
+                btn.setAttribute('data-light', lang === 'ru' ? 'Темная тема <span>🌙</span>' : 'Dark mode <span>🌙</span>');
+
+                btn.setAttribute('data-dark', lang === 'ru' ? 'Светлая тема <span>☀️</span>' : 'Light mode <span>☀️</span>');
+
+            });
+
+        }
+
     </script>
+
 </head>
+
 <body class="dark-mode">
+
     <header>
+
         <h1 data-lang="ru" style="display: block;">lepex</h1>
+
         <h1 data-lang="en" style="display: none;">lepex</h1>
+
         <button class="theme-toggle" data-toggle-theme="" data-light="Темная тема <span>🌙</span>" data-dark="Светлая тема <span>☀️</span>" onclick="toggleTheme()">Светлая тема <span>☀️</span></button>
+
         <div class="dropdown">
+
             <button class="dropbtn" data-language-toggle="">Language</button>
+
             <div class="dropdown-content">
+
                 <a href="#" onclick="switchLanguage('ru')">Русский</a>
+
                 <a href="#" onclick="switchLanguage('en')">English</a>
+
             </div>
+
         </div>
+
     </header>
+
     <nav>
+
         <a href="#home" data-lang="ru" style="display: block;">Главная</a>
+
         <a href="#home" data-lang="en" style="display: none;">Home</a>
+
         <a href="#services" data-lang="ru" style="display: block;">Услуги</a>
+
         <a href="#services" data-lang="en" style="display: none;">Services</a>
+
         <a href="#works" data-lang="ru" style="display: block;">Мои работы</a>
+
         <a href="#works" data-lang="en" style="display: none;">Portfolio</a>
+
         <a href="#contact" data-lang="ru" style="display: block;">Контакты</a>
+
         <a href="#contact" data-lang="en" style="display: none;">Contact</a>
+
     </nav>
+
     <div id="home" class="content" data-lang="ru" style="display: none;">
+
         <h2>Добро пожаловать</h2>
+
         <p>Я занимаюсь созданием любительских субтитров на русском языке.</p>
+
     </div>
+
     <div id="home" class="content" data-lang="en" style="display: block;">
+
         <h2>Welcome</h2>
+
         <p>I am involved in creating amateur subtitles in Russian.</p>
+
     </div>
+
     <div id="services" class="content" data-lang="ru" style="display: none;">
+
         <h2>Услуги</h2>
+
         <p>В данный момент мои услуги бесплатны.<p>Все что я от вас потребую, это как-либо указать меня и этот сайт в вашем видео.</p>
+
     </div>
+
     <div id="services" class="content" data-lang="en" style="display: block;">
+
         <h2>Services</h2>
+
         <p>At the moment, my services are free.<p>All I ask from you is to credit me and this website in your video.</p>
+
     </div>
+
     <div id="works" class="content works">
+
         <h2 data-lang="ru" style="display: none;">Мои работы</h2>
+
         <h2 data-lang="en" style="display: block;">Portfolio</h2>
+
         <div class="work-item">
+
             <a href="https://youtu.be/IE0kvIbVmwk?si=gm5uzyFI-C6Q6tRt" target="_blank">
+
                 <img src="img/PxAY OFF.png" alt="PxAY OFF">
+
             </a>
+
             <p class="image-caption">PxAY OFF</p>
+
         </div>
+
         <div class="work-item">
+
             <a href="https://youtu.be/iznGnD1dr-4?si=EnzDRWhJtgePbyPf" target="_blank">
+
                 <img src="img/undertale yellow animation.png" alt="Undertale Yellow Animation">
+
             </a>
+
             <p class="image-caption">Undertale Yellow Animation</p>
+
         </div>
+
         <div class="work-item">
+
             <a href="https://youtu.be/xzbPJ9_CoZ8?si=-vJt-jhPP-wppMw3" target="_blank">
+
                 <img src="img/When OneDrive Ruins Your Day.png" alt="When OneDrive Ruins Your Day">
+
             </a>
+
             <p class="image-caption">When OneDrive Ruins Your Day</p>
+
         </div>
+
     </div>
+
     <footer id="contact" data-lang="ru" style="display: none;">
+
         <p>Контакты: lepexmail@gmail.com</p>
+
     </footer>
+
     <footer id="contact" data-lang="en" style="display: block;">
+
         <p>Contact: lepexmail@gmail.com</p>
+
     </footer>
+
 </body>
+
 </html>
